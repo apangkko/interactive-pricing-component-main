@@ -51,5 +51,3 @@ discountTextChange();
 window.onresize = () => {
     discountTextChange();
 }
-
-    

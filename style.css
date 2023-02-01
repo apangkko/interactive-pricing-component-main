@@ -1,299 +1,299 @@
 :root {
---clr-softCyan: hsl(174, 77%, 80%);
---clr-strongCyan: hsl(174, 86%, 45%);
---clr-lightGrayishRed: hsl(14, 92%, 95%);
---clr-lightRed: hsl(15, 100%, 70%);
---clr-paleBlue: hsl(226, 100%, 87%);
---clr-white: hsl(0, 0%, 100%);
---clr-veryPaleBlue: hsl(230, 100%, 99%);
---clr-lightGrayishBlue400: hsl(224, 65%, 95%);
---clr-lightGrayishBlue500: hsl(223, 50%, 87%);
---clr-grayishBlue: hsl(225, 20%, 60%);
---clr-darkDesaturatedBlue: hsl(227, 35%, 25%);
-}
-
-*, *::before, *::after {
-    box-sizing: border-box;
-}
-
-body, p, h1, ul, hr {
-    margin: 0;
-}
-
-ul {
-    padding: 0;
-}
-
-main {
-    display: grid;
-    justify-content: center;
-    align-content: start;
-    gap: 1.5rem;
-    color: var(--clr-grayishBlue);
-    font-family: 'Manrope', sans-serif;
-    background-color: var(--clr-veryPaleBlue);
-    background-image: url('./images/bg-pattern.svg');
-    background-repeat: no-repeat;
-    background-size: 100% 50%;
-    min-height: 100vh;
-    padding: 70px 0;
-}
-
-header  {
-    display: grid;
-    align-content: center;
-    text-align: center;
-    gap: .5rem;
-    height: 145px;
-    background-image: url('./images/pattern-circles.svg');
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-header > h1 {
-    color: var(--clr-darkDesaturatedBlue);
-    font-size: 1.5rem;
-}
-
-header > p {
-    font-size: .8rem;
-}
-
-.newLine {
-    margin-top: .2rem;
-    display: block;
-}
-
-.pricing_card {
-    width: calc(100vw - 3rem);
-    max-width: 540px;
-    font-size: .8rem;
-    background-color: var(--clr-white);
-    border-radius: 8px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, .05);
-}
-
-.upper, .under {
-    display: grid;
-    justify-items: center;
-    padding: 2rem 1.5rem;
-    gap: 1.5rem;
-}
-
-.upper {
-    align-items: center;
-    grid-template-areas:
-    "pageviews"
-    "prices-range"
-    "prices"
-    "billing"
- }
-
-.pageviews {
-    grid-area: pageviews;
-    text-transform: uppercase;
-    font-weight: 800;
-    letter-spacing: 2px;
-}
-
-.prices {
-    grid-area: prices;
-    display: flex;
-    align-items: center;
-}
-
-input[type="range"] {
-    grid-area: prices-range;
-    -webkit-appearance: none;
-    width: 100%;
-    height: 8px;
-    background-color: var(--clr-lightGrayishBlue400);
-    background-image: linear-gradient(var(--clr-softCyan), var(--clr-softCyan));
-    background-size: 50% 100%;
-    background-repeat: no-repeat;
-    border-radius: 100px;
-}
-
-input[type="range"]::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    cursor: pointer;
-    width: 38px;
-    height: 38px;
-    border: 0;
-    border-radius: 50%;
-    background: var(--clr-strongCyan) url('./images/icon-slider.svg');
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-    box-shadow: 0 15px 25px var(--clr-softCyan);
-    transition: background .3s ease-in-out;
-}
-
-input[type="range"]::-webkit-slider-thumb:hover {
-    background-color: hsl(174, 78%, 66%);
-}
-
-input[type="range"]::-webkit-slider-thumb:active {
-    cursor: grabbing;
-    background-color: hsl(174, 96%, 30%);
-}
-
-.prices_amount {
-    color: var(--clr-darkDesaturatedBlue);
-    font-size: 2rem;
-    font-weight: 800;
-    padding-right: .5rem;
-}
-
-.prices_cycle {
-    font-size: 1rem;
-}
-
-.billing_cycle {
-    grid-area: billing;
-    display: flex;
-    align-items: center;
-    gap: .5rem;
-}
-
-/* Toggle Switch */
-
-.switch{
-    cursor: pointer;
-    position: relative;
-    width: 42px;
-    height: 22px;
-}
-
-.switch input {
-    opacity: 0;
-}
-
-.slider {
-    position: absolute;
-    display: inline-block;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    border-radius: 100px;
-    background-color: var(--clr-lightGrayishBlue500);
-    -webkit-transition: .4s;
-    transition: .4s;
-}
-
-.slider:before {
-    position: absolute;
-    content: "";
-    width: 14px;
-    height: 14px;
-    border-radius: 50%;
-    background-color: var(--clr-white);
-    left: 4px;
-    bottom: 4px;
-    -webkit-transition: .4s;
-    transition: .4s;
-}
-
-.switch input:checked + .slider {
-    background-color: var(--clr-strongCyan);
-}
-
-.switch input:checked + .slider:before {
-    -webkit-transform: translateX(20px);
-    -ms-transform: translateX(20px);
-    transform: translateX(20px);
-}
-
-.discount {
-    background-color: var(--clr-lightGrayishRed);
-    color: var(--clr-lightRed);
-    font-size: .625rem;
-    font-weight: 800;
-    margin-left: .4rem;
-    padding: .1rem .45rem;
-    border-radius: 100px;
-}
-
-hr {
-    border: 0;
-    border-top: 1px solid var(--clr-lightGrayishBlue400);
-}
-
-.benefits {
-    display: grid;
-    gap: .5rem;
-    list-style-image: url('./images/icon-check.svg');
-}
-
-.benefits > li {
-    padding-left: .5rem;
-}
-
-.btn {
-    cursor: pointer;
-    border: 0;
-    border-radius: 100px;
-    background-color: var(--clr-darkDesaturatedBlue);
-    color: var(--clr-paleBlue);
-    font-family: inherit;
-    font-weight: 800;
-    padding: .8rem 2.8rem;
-}
-
-.btn:hover {
-    color: var(--clr-white);
-}
-
-@media only screen and (min-width:540px) {
+    --clr-softCyan: hsl(174, 77%, 80%);
+    --clr-strongCyan: hsl(174, 86%, 45%);
+    --clr-lightGrayishRed: hsl(14, 92%, 95%);
+    --clr-lightRed: hsl(15, 100%, 70%);
+    --clr-paleBlue: hsl(226, 100%, 87%);
+    --clr-white: hsl(0, 0%, 100%);
+    --clr-veryPaleBlue: hsl(230, 100%, 99%);
+    --clr-lightGrayishBlue400: hsl(224, 65%, 95%);
+    --clr-lightGrayishBlue500: hsl(223, 50%, 87%);
+    --clr-grayishBlue: hsl(225, 20%, 60%);
+    --clr-darkDesaturatedBlue: hsl(227, 35%, 25%);
+    }
+    
+    *, *::before, *::after {
+        box-sizing: border-box;
+    }
+    
+    body, p, h1, ul, hr {
+        margin: 0;
+    }
+    
+    ul {
+        padding: 0;
+    }
+    
     main {
-        gap: 3.5rem;
+        display: grid;
+        justify-content: center;
+        align-content: start;
+        gap: 1.5rem;
+        color: var(--clr-grayishBlue);
+        font-family: 'Manrope', sans-serif;
+        background-color: var(--clr-veryPaleBlue);
+        background-image: url('./images/bg-pattern.svg');
+        background-repeat: no-repeat;
+        background-size: 100% 50%;
+        min-height: 100vh;
+        padding: 70px 0;
     }
-
+    
+    header  {
+        display: grid;
+        align-content: center;
+        text-align: center;
+        gap: .5rem;
+        height: 145px;
+        background-image: url('./images/pattern-circles.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    
     header > h1 {
-        font-size: 1.8rem;
+        color: var(--clr-darkDesaturatedBlue);
+        font-size: 1.5rem;
     }
-
+    
     header > p {
-        font-size: .95rem;
+        font-size: .8rem;
     }
-
+    
     .newLine {
-        display: inline;
+        margin-top: .2rem;
+        display: block;
     }
-
-    :is(.upper, .under) {
-        padding: 2.5rem 3rem;
+    
+    .pricing_card {
+        width: calc(100vw - 3rem);
+        max-width: 540px;
+        font-size: .8rem;
+        background-color: var(--clr-white);
+        border-radius: 8px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, .05);
     }
-
+    
+    .upper, .under {
+        display: grid;
+        justify-items: center;
+        padding: 2rem 1.5rem;
+        gap: 1.5rem;
+    }
+    
     .upper {
-        gap: 3rem;
+        align-items: center;
         grid-template-areas:
-        "pageviews prices"
-        "prices-range prices-range"
-        "billing billing"
-    }
-
+        "pageviews"
+        "prices-range"
+        "prices"
+        "billing"
+     }
+    
     .pageviews {
-        justify-self: start;
-        font-size: .9rem;
+        grid-area: pageviews;
+        text-transform: uppercase;
+        font-weight: 800;
+        letter-spacing: 2px;
     }
-
+    
     .prices {
-        justify-self: end;
-    }
-
-    .prices_amount {
-        font-size: 2.5rem;
-    }
-
-    .under {
+        grid-area: prices;
         display: flex;
-        justify-content: space-between;
         align-items: center;
     }
-
-    .benefits {
-        margin-left: 1rem;
+    
+    input[type="range"] {
+        grid-area: prices-range;
+        -webkit-appearance: none;
+        width: 100%;
+        height: 8px;
+        background-color: var(--clr-lightGrayishBlue400);
+        background-image: linear-gradient(var(--clr-softCyan), var(--clr-softCyan));
+        background-size: 50% 100%;
+        background-repeat: no-repeat;
+        border-radius: 100px;
     }
-}
+    
+    input[type="range"]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        cursor: pointer;
+        width: 38px;
+        height: 38px;
+        border: 0;
+        border-radius: 50%;
+        background: var(--clr-strongCyan) url('./images/icon-slider.svg');
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        box-shadow: 0 15px 25px var(--clr-softCyan);
+        transition: background .3s ease-in-out;
+    }
+    
+    input[type="range"]::-webkit-slider-thumb:hover {
+        background-color: hsl(174, 78%, 66%);
+    }
+    
+    input[type="range"]::-webkit-slider-thumb:active {
+        cursor: grabbing;
+        background-color: hsl(174, 96%, 30%);
+    }
+    
+    .prices_amount {
+        color: var(--clr-darkDesaturatedBlue);
+        font-size: 2rem;
+        font-weight: 800;
+        padding-right: .5rem;
+    }
+    
+    .prices_cycle {
+        font-size: 1rem;
+    }
+    
+    .billing_cycle {
+        grid-area: billing;
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+    }
+    
+    /* Toggle Switch */
+    
+    .switch{
+        cursor: pointer;
+        position: relative;
+        width: 42px;
+        height: 22px;
+    }
+    
+    .switch input {
+        opacity: 0;
+    }
+    
+    .slider {
+        position: absolute;
+        display: inline-block;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        border-radius: 100px;
+        background-color: var(--clr-lightGrayishBlue500);
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+    
+    .slider:before {
+        position: absolute;
+        content: "";
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background-color: var(--clr-white);
+        left: 4px;
+        bottom: 4px;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+    
+    .switch input:checked + .slider {
+        background-color: var(--clr-strongCyan);
+    }
+    
+    .switch input:checked + .slider:before {
+        -webkit-transform: translateX(20px);
+        -ms-transform: translateX(20px);
+        transform: translateX(20px);
+    }
+    
+    .discount {
+        background-color: var(--clr-lightGrayishRed);
+        color: var(--clr-lightRed);
+        font-size: .625rem;
+        font-weight: 800;
+        margin-left: .4rem;
+        padding: .1rem .45rem;
+        border-radius: 100px;
+    }
+    
+    hr {
+        border: 0;
+        border-top: 1px solid var(--clr-lightGrayishBlue400);
+    }
+    
+    .benefits {
+        display: grid;
+        gap: .5rem;
+        list-style-image: url('./images/icon-check.svg');
+    }
+    
+    .benefits > li {
+        padding-left: .5rem;
+    }
+    
+    .btn {
+        cursor: pointer;
+        border: 0;
+        border-radius: 100px;
+        background-color: var(--clr-darkDesaturatedBlue);
+        color: var(--clr-paleBlue);
+        font-family: inherit;
+        font-weight: 800;
+        padding: .8rem 2.8rem;
+    }
+    
+    .btn:hover {
+        color: var(--clr-white);
+    }
+    
+    @media only screen and (min-width:540px) {
+        main {
+            gap: 3.5rem;
+        }
+    
+        header > h1 {
+            font-size: 1.8rem;
+        }
+    
+        header > p {
+            font-size: .95rem;
+        }
+    
+        .newLine {
+            display: inline;
+        }
+    
+        :is(.upper, .under) {
+            padding: 2.5rem 3rem;
+        }
+    
+        .upper {
+            gap: 3rem;
+            grid-template-areas:
+            "pageviews prices"
+            "prices-range prices-range"
+            "billing billing"
+        }
+    
+        .pageviews {
+            justify-self: start;
+            font-size: .9rem;
+        }
+    
+        .prices {
+            justify-self: end;
+        }
+    
+        .prices_amount {
+            font-size: 2.5rem;
+        }
+    
+        .under {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    
+        .benefits {
+            margin-left: 1rem;
+        }
+    }
