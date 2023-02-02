@@ -214,6 +214,10 @@
         padding: .1rem .45rem;
         border-radius: 100px;
     }
+
+    .discount.desktop {
+        display: none;
+    }
     
     hr {
         border: 0;
@@ -291,6 +295,14 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+        }
+
+        .discount {
+            display: none;
+        }
+    
+        .discount.desktop {
+            display: inline;
         }
     
         .benefits {

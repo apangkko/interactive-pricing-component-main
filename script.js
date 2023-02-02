@@ -35,19 +35,3 @@ const pricesChange = () => {
     const val = pricesRange.value
     pricesRange.style.backgroundSize = (val - min) * 100 / (max - min) + '% 100%'
 }
-
-
-const discountTextChange = () => {
-    const width = window.innerWidth;
-    if(width > 540) {
-        discount.innerHTML = '25% discount';
-    } else {
-        discount.innerHTML = '-25%';
-    }
-}
-
-discountTextChange();
-
-window.onresize = () => {
-    discountTextChange();
-}
